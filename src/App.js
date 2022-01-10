@@ -39,6 +39,11 @@ export default function App() {
         }
       })
       .catch(error => setStatus('error'));
+
+    return () => {
+      window.removeEventListener('keydown', closeModal);
+    };
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchWord, page]);
 
